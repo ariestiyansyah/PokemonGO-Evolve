@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/node_modules/angular-material/angular-material.css">
+</head>
+    <body ng-app="pogoEvolve">
+
+        <div ng-controller="pogoController">
+            <form ng-submit="calcCP(poke)" name="form">
+                <label>
+                    <select name="" id="" ng-model="poke.selected" required>
+                        <option></option>
+                        <option ng-repeat="option in datapoke" value="{{option.multiplier}}">{{option.name}}</option>
+                    </select>
+                </label>
+                <br>
+                <label>
+                <input type="number" placeholder="CP" ng-model="poke.cp" required>
+                </label>
+                <br>
+                <button type="submit">
+                Calculate
+                </button>
+            </form>
+            <br>
+            <p>
+                Result1: {{result1}}
+                <br>
+                Result2: {{result2}}
+            </p>
+        </div>
+
+    <script src="/node_modules/angular/angular.js"></script>
+    <script src="/node_modules/angular-material/angular-material.js"></script>
+
+    <script>
+    var pogoEvolve = angular.module('pogoEvolve', []);
+
+    pogoEvolve.controller('pogoController', ['$scope', function($scope) {
+        $scope.datapoke = [{
+            "name": "pikachu",
+            "multiplier": {
+                "min": 3.2,
+                "max": 8.2
+            }
+        }, {
+            "name": "raichu",
+            "multiplier": {
+                "min": 3.2,
+                "max": 8.2
+            }
+        }];
+
+        $scope.calcCP = function(data) {
+            console.log("tes", JSON.parse(data.selected));
+            var value = JSON.parse(data.selected);
+            var result1 = data.cp * value.min;
+            var result2 = data.cp * value.max;
+
+            console.log("result1", result1);
+            console.log("result2", result2);
+
+            $scope.result1 = Math.round(result1);
+            $scope.result2 = Math.round(result2);
+        }
+
+    }]);
+    </script
+
+</body>
+</html>
