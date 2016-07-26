@@ -1,0 +1,25 @@
+{
+  "name": "pokemongo-evolve",
+  "version": "1.0.0",
+  "description": "Pokemon Go Evolution Calculator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ariestiyansyah/PokemonGO-Evolve.git"
+  },
+  "keywords": [
+    "pokemongo-evolve"
+  ],
+  "author": "Rizky Ariestiyansyah",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ariestiyansyah/PokemonGO-Evolve/issues"
+  },
+  "homepage": "https://github.com/ariestiyansyah/PokemonGO-Evolve#readme",
+  "dependencies": {
+    "angular-material": "^1.1.0-rc.5"
+  }
+}
